@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Custos Mercado Livre</title>
+    <meta name="author" content="Douglas Alves de Sousa">
+    <meta name="description" content="Calcule os custos do seu anúncio para ter uma estimativa do preço que você deve anúnciar e do quanto você receberá por cada venda.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="sytyle.css">
+</head>
+<body class="body">
+    
+    <main class="main">
+
+        <header class="main__header">
+
+            <h1 class="main__title">Simulador de custos Mercado Livre</h1>
+            <p class="main__lead">Calcule os custos do seu anúncio para ter uma estimativa do preço que você deve anúnciar e do quanto você receberá por cada venda.</p>
+            
+        </header>
+
+        <section class="section section--field">
+
+            <header class="section__header">
+                <h2 class="section__title">Custo do produto (R$)
+                    <span data-target="product" class="material-icons section__icon section__icon--help">
+                        info
+                    </span>
+                </h2>
+
+                <div data-name="product" class="description">
+
+                    <p class="description__text">
+                        é o valor que você pagou no produto.
+                    </p>
+
+                </div>
+
+            </header>
+
+            <div class="field field--text">
+
+                <span class="field__prefix">R$</span>
+                <input type="text" name="product" class="field__input field__input--text" placeholder="00,00">
+
+            </div>
+       
+        </section>
+
+        <section class="section section--field">
+ 
+        <header class="section__header">
+
+            <h2 class="section__title">Tarifa de venda (%)
+                <span data-target="fee" class="material-icons section__icon section__icon--help">
+                    info
+                </span>
+            </h2>
+
+            <div data-name="fee" class="description">
+
+                <p class="description__text">
+                    Percentual que você pagará ao Mercado Livre por cada venda desse produto.
+                </p>
+
+            </div>
+
+        </header>
+
+        <div class="field field--range">
+
+            <span class="field__prefix">11,5 %</span>
+            <input type="range" name="fee" min="11" max="20" value="11.5" step=".5" value="11" class="field__input field__input--range">
+
+        </div>
+
+        </section>
+
+        <section class="section section--field">
+
+            <header class="section__header">
+
+                <h2 class="section__title">Custo de envio (R$)
+                    <span data-target="shipping" class="material-icons section__icon section__icon--help">
+                        info
+                    </span>
+                </h2>
+
+                <div data-name="shipping" class="description">
+
+                    <p class="description__text">
+                        R$5,50 para valor de venda abaixo de R$79,00 e para valores maiores ou iguais a R$79,00 utilizar o valor do frete grátis informado pelo Mercado Livre.
+                    </p>
+
+                </div>
+
+            </header>
+
+            <div class="field field--text">
+
+                <span class="field__prefix">R$</span>
+                <input type="text" name="shipping" class="field__input field__input--text" placeholder="00,00">
+
+            </div>
+
+        </section>
+
+        <section class="section section--field">
+
+                <header class="section__header">
+
+                    <h2 class="section__title">Margem de lucro (%)
+                        <span data-target="profit" class="material-icons section__icon section__icon--help">
+                            info
+                        </span>
+                    </h2>
+
+                    <div data-name="profit" class="description">
+
+                        <p class="description__text">
+                            Percentual que você deseja receber sobre o valor que você pagou no produto. O valor que recomendamos é de no mínimo 10%.
+                        </p>
+
+                    </div>
+
+                </header>
+    
+                <div class="field field--range">
+
+                    <span class="field__prefix">10 %</span>
+                    <input type="range" name="profit" value="10" class="field__input field__input--range">
+
+                </div>
+
+        </section>
+
+        <section class="section section--help section--collapsed">
+
+            <div class="section__content">
+
+                <span data-target="disabled" class="material-icons section__icon section__icon--help ">
+                    info
+                </span>
+
+                <p class="section__text">
+                    Um ou mais campos não foram preenchidos, por favor preencha os campos destacados.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="section section--result section--faded">
+
+            <div class="result">
+
+                <p class="result__text result__text--price">Preço do anúncio<span class="result__value">R$00,00</span></p>
+                <p class="result__text result__text--costs">Custos estimados<span class="result__value">R$00,00</span></p>
+
+                <hr class="divider">
+
+                <p class="result__text result__text--income">Você receberá por cada venda<span class="result__value">R$00,00</span></p>
+                <p class="result__text result__text--profit">Lucro por venda<span class="result__value">R$00,00</span></p>
+
+            </div>
+
+        </section>
+
+        <section class="section section--faded section--help section--help-result">
+
+            <div class="section__content">
+
+                <span data-target="disabled" class="material-icons section__icon section__icon--help ">
+                    info
+                </span>
+
+                <p class="section__text">
+                    <strong>ATENÇÃO:</strong> Estes são valores estimados e podem variar de acordo com as suas condições como vendedor no Mercado Livre. Esta estimativa não inclui custos fiscais.
+                </p>
+
+        </section>
+        
+        <button onclick="calc()" class="button button--primary button--lg">Calcular custos</button>
+
+    </main>
+
+    <footer class="footer">
+        <span class="footer__credit">Criado por Douglas Alves</span>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
