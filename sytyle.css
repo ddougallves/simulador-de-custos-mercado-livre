@@ -53,11 +53,6 @@
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.12);
 }
 
-.section--collapsed {
-    height: 0;
-    padding: 0;
-}
-
 .section--faded {
     opacity: .25;
     pointer-events: none;
@@ -75,10 +70,6 @@
     background-color: #E4E4E4;
     overflow: hidden;
     transition: ease-in-out 100ms;
-}
-
-.section--help.section--collapsed {
-    box-shadow: unset;
 }
 
 .section--help .section__content {
