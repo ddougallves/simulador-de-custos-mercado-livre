@@ -114,16 +114,16 @@
 
                 <header class="section__header">
 
-                    <h2 class="section__title">Margem de lucro (%)
-                        <span data-target="profit" class="material-icons section__icon section__icon--help">
+                    <h2 class="section__title">Impostos (%)
+                        <span data-target="tax" class="material-icons section__icon section__icon--help">
                             info
                         </span>
                     </h2>
 
-                    <div data-name="profit" class="description">
+                    <div data-name="tax" class="description">
 
                         <p class="description__text">
-                            Percentual que você deseja receber sobre o valor que você pagou no produto. O valor que recomendamos é de no mínimo 10%.
+                            Percentual que você pagará em impostos sobre o valor de cada venda deste produto no Mercado Livre.
                         </p>
 
                     </div>
@@ -133,11 +133,40 @@
                 <div class="field field--range">
 
                     <span class="field__prefix">10 %</span>
-                    <input type="range" name="profit" value="10" class="field__input field__input--range">
+                    <input type="range" name="tax" max="22.5" step=".5" value="0" class="field__input field__input--range">
 
                 </div>
 
         </section>
+
+        <section class="section section--field">
+
+            <header class="section__header">
+
+                <h2 class="section__title">Margem de lucro (%)
+                    <span data-target="profit" class="material-icons section__icon section__icon--help">
+                        info
+                    </span>
+                </h2>
+
+                <div data-name="profit" class="description">
+
+                    <p class="description__text">
+                        Percentual que você deseja receber sobre o valor que você pagou no produto. O valor que recomendamos é de no mínimo 10%.
+                    </p>
+
+                </div>
+
+            </header>
+
+            <div class="field field--range">
+
+                <span class="field__prefix">10 %</span>
+                <input type="range" name="profit" value="10" class="field__input field__input--range">
+
+            </div>
+
+    </section>
 
         <section class="section section--help section--collapsed">
 
@@ -161,10 +190,12 @@
 
                 <p class="result__text result__text--price">Preço do anúncio<span class="result__value">R$00,00</span></p>
                 <p class="result__text result__text--costs">Custos estimados<span class="result__value">R$00,00</span></p>
-
+                
                 <hr class="divider">
 
                 <p class="result__text result__text--income">Você receberá por cada venda<span class="result__value">R$00,00</span></p>
+                <p class="result__text result__text--product">Custo do produto<span class="result__value">R$00,00</span></p>
+                <p class="result__text result__text--tax">Impostos<span class="result__value">R$00,00</span></p>
                 <p class="result__text result__text--profit">Lucro por venda<span class="result__value">R$00,00</span></p>
 
             </div>
@@ -180,7 +211,7 @@
                 </span>
 
                 <p class="section__text">
-                    <strong>ATENÇÃO:</strong> Estes são valores estimados e podem variar de acordo com as suas condições como vendedor no Mercado Livre. Esta estimativa não inclui custos fiscais.
+                    <strong>ATENÇÃO:</strong> Esta estimativa de custos pode variar de acordo com as condições de venda e a condição fiscal do vendedor e/ou comprador no Mercado Livre. 
                 </p>
 
         </section>

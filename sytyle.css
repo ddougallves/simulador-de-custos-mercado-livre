@@ -181,8 +181,7 @@
 }
 
 .field--focus {
-    border: 1px solid #3483FA;
-    box-shadow: 0 0 0 1px #3483FA;
+    border: 2px solid #3483FA;
 }
 
 .field__prefix {
@@ -298,16 +297,12 @@
         align-items: center;
         gap: 1rem;
         flex-direction: column;
+        font-size: 1rem;
         text-align: center;
     }
 
     .result__text--income .result__value{
         font-size: 3rem;
-    }
-
-    .result__text--profit {
-        gap: 1rem;
-        justify-content: center;
     }
 
 }

@@ -201,26 +201,34 @@ function checkFields() {
 const product = document.querySelector('.field__input[name="product"]');
 const fee = document.querySelector('.field__input[name="fee"]');
 const shipping = document.querySelector('.field__input[name="shipping"]');
+const tax = document.querySelector('.field__input[name="tax"]');
 const margin = document.querySelector('.field__input[name="profit"]');
 
 function calc() {
 
     if(!checkFields())return;
 
-    let price = getPrice(product.value,fee.value,shipping.value,margin.value);
+    let price = getPrice(product.value,fee.value,shipping.value,tax.value,margin.value);
     let costs = getCosts(price,fee.value,shipping.value)
     let income = getIncome(price,costs);
-    let profit = getProfit(income,product.value);
-
-    function getPrice(product,fee,shipping,margin) {
+    let taxes = getTax(price,tax.value);
+    let profit = getProfit(income,product.value,taxes);
+    
+    function getPrice(product,fee,shipping,tax,margin) {
 
         product = numberFormat(product);
+        tax = numberFormat(tax);
         margin = numberFormat(margin);
         shipping = numberFormat(shipping);
         fee = numberFormat(fee);
 
-        return ((product*margin/100+product+shipping)*100)/(100-fee);
+        return ((product*margin/100+product+shipping)*100)/(100-(fee+tax));
     }
+
+    function getTax(price,tax){
+        tax = numberFormat(tax);
+        return (price*tax)/100;
+    };
 
     function numberFormat(value) {
 
@@ -256,12 +264,9 @@ function calc() {
 
     }
     
-    function getProfit(income,product) {
-
+    function getProfit(income,product,taxes) {
         product = numberFormat(product);
-
-        return income - product ;
-
+        return income - taxes - product;
     }
 
     document.querySelector('.result__text--price .result__value')
@@ -272,6 +277,12 @@ function calc() {
 
     document.querySelector('.result__text--income .result__value')
     .innerText = `${currencyFormat(income)}`;
+
+    document.querySelector('.result__text--product .result__value')
+    .innerText = `-${currencyFormat(numberFormat(product.value))}`;
+
+    document.querySelector('.result__text--tax .result__value')
+    .innerText = `-${currencyFormat(taxes)}`;
 
     document.querySelector('.result__text--profit .result__value')
     .innerText = `${currencyFormat(profit)}`;
