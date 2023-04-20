@@ -40,13 +40,13 @@ function calc() {
     document.querySelector('.result__text--price .result__value')
     .innerText = currencyFormat(price);
     document.querySelector('.result__text--costs .result__value')
-    .innerText = currencyFormat(costs);
+    .innerText = `-${currencyFormat(costs)}`;
     document.querySelector('.result__text--income .result__value')
     .innerText = currencyFormat(income);
     document.querySelector('.result__text--product .result__value')
-    .innerText = currencyFormat(productCost);
+    .innerText = `-${currencyFormat(productCost)}`;
     document.querySelector('.result__text--tax .result__value')
-    .innerText = currencyFormat(tax);
+    .innerText = `-${currencyFormat(tax)}`;
     document.querySelector('.result__text--profit .result__value')
     .innerText = currencyFormat(profit);
 
