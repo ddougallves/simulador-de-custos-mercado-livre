@@ -172,7 +172,8 @@
 }
 
 .field--focus {
-    border: 2px solid #3483FA;
+    outline: 2px solid #3483FA;
+    border: 1px solid #3483FA;
 }
 
 .field__prefix {
